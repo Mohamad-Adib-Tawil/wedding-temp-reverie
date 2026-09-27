@@ -51,6 +51,8 @@ function fillContent() {
   const c = WEDDING_CONFIG;
   const names = c.groom && c.bride ? `${c.groom} & ${c.bride}` : "";
   setText("coverNames", names);
+  const cover = document.getElementById("cover");
+  if (cover) cover.classList.toggle("cover--long-names", names.length > 20);
   setText("heroGroom", c.groom); setText("heroBride", c.bride);
   setText("heroInvite", c.heroSub); setText("heroDate", c.dateText);
   /* سطر الساعة تحت التاريخ — بلا وقت يُرفع السطر كلّه فلا فجوة ولا سطر فارغ */
